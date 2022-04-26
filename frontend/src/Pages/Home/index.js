@@ -1,3 +1,12 @@
+import React, {Component} from 'react';
+import MyNavLink from '../../pages/MyNavLink';
+// eslint-disable-next-line no-unused-vars
+import AboutUs from '../AboutUs/AboutUs';
+import Slider from '../../components/Slider/Slider';
+import Footer from '../../components/Footer/Footer';
+import Customer from '../../components/Customer/Customer';
+import MapContainer from '../../components/MapContainer/MapContainer';
+import Cards from '../../components/Cards/Cards';
 class Home extends Component {
     render() {
         return (
