@@ -1,75 +1,71 @@
-const comboService = require('../services/combo-service');
+const userService = require('../services/user-service');
 const mongoose = require('mongoose');
 
 
-/** fetch task list
+/** fetch user by id
  *
  * @param req
  * @param res
  * @returns {Promise<void>}
  */
-exports.findAll = async (req, res) => {
-    try {
-        const task = await comboService.search();
-        res.status(200).send(task);
-    } catch (err) {
-        res.status(500).json({ error: err.message });
-    }
-}
+// exports.findById=async (req,res)=>{
+//     try{
+//         const task=await userService.searchById(req.params.id);
+//         res.status(200).send(task);
+//     }catch(err){
+//         res.status(500).json({error: err.message});
+//     }
+// }
 
-/** fetch Combo by id
- *
- * @param req
- * @param res
- * @returns {Promise<void>}
- */
 exports.findById = async (req, res) => {
     try {
-        const task = await comboService.searchById(req.params.id);
+        console.log("Inside user-controller, findByid:", req.query.mail, req.query.password);
+        const task = await userService.searchById(req.query);
+        console.log("Inside user-controller, task:", task);
         res.status(200).send(task);
     } catch (err) {
         res.status(500).json({ error: err.message });
     }
 }
 
-/** add Combo to database
+/** add user to database
  *
  * @param req
  * @param res
  * @returns {Promise<void>}
  */
-exports.addCombo = async (req, res) => {
+exports.addUser = async (req, res) => {
     try {
         const task = { ...req.body };
-        const newTask = await comboService.createCombo(task);
+        const newTask = await userService.createUser(task);
         res.status(200).send(newTask);
     } catch (err) {
         res.status(500).json({ error: err.message });
     }
 }
 
-/** update Combo based on _id
+/** update user based on _id
  *
  * @param req
  * @param res
  * @returns {Promise<void>}
  */
-exports.updateCombo = async (req, res) => {
+exports.updateUser = async (req, res) => {
     try {
-        const task = await comboService.updateCombo(req.params.id, req.body);
+        const task = await userService.updateUser(req.params.id, req.body);
         res.status(200).send(task);
     } catch (err) {
         res.status(500).json({ error: err.message });
     }
 }
 
-/** delete Combo based on _id
+/** delete user based on _id
  *
  */
 
-exports.deleteCombo = async (req, res) => {
+exports.deleteUser = async (req, res) => {
     try {
-        const task = await comboService.deleteCombo(req.params.id);
+        const task = await userService.deleteUser(req.params.id);
         res.status(200).json({ msg: 'successfully delete' });
     } catch (err) {
         res.status(500).json({ error: err.message });

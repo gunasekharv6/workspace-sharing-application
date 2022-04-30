@@ -4,10 +4,10 @@ const mongoose = require('mongoose');
  * Mongoose schema for combo object.
  */
 
-let basesSchema = new mongoose.Schema({
+let amenitiesSchema = new mongoose.Schema({
     Name: {
         type: String,
-        enum: ['Chopped Romaine', 'Baby Spinach', 'Spring Mix', 'Shredded Kale', 'Warm Wild Rice', 'Warm Quinoa'],
+        enum: ['wifi', 'noNoice', 'projector', 'whiteboard', 'laptop', 'printer'],
     },
     Amount: {
         type: Number,
@@ -16,10 +16,10 @@ let basesSchema = new mongoose.Schema({
     }
 });
 
-let toppingsSchema = new mongoose.Schema({
+let fitnessSchema = new mongoose.Schema({
     Name: {
         type: String,
-        enum: ['Raisins', 'Apples', 'Basil', 'Raw Carrots', 'Chickpeas', 'Cilantro', 'Cucumber', 'Raw Beet', 'Red Onion', 'Roasted Sweet Potato', 'Shredded Cabbage', 'Spicy Broccoli', 'Tomato', 'Lentils', 'Spicy Sunflower Seeds', 'Crispy Rice', 'Toasted Almonds', 'Tortilla Chips'],
+        enum:['fitnessConsultant', 'gymArea', 'danceRoom', 'yoga'],
     },
     Amount: {
         type: Number,
@@ -28,10 +28,11 @@ let toppingsSchema = new mongoose.Schema({
     }
 });
 
-let premiumsSchema = new mongoose.Schema({
+let roomsSchema = new mongoose.Schema({
     Name: {
         type: String,
-        enum: ['Roasted Brussels Sprouts', 'Curry Roasted Cauliflower', 'Pickled Carrots Celery', 'Blue Cheese', 'Goat Cheese', 'Shaved Parmesan', 'Parmesan Crisp', 'Hard Boiled Egg', 'Hot Roasted Sweet Potatoes', 'Avocado', 'Roasted Sesame Tofu', 'Warm Portobello Mix', 'Blackened Chicken', 'Roasted Chicken', 'Steelhead'],
+        enum: ['personalDesk', 'meetingRoom', 'conferenceRoom', 'discussionRoom',
+        'smokingRoom', 'eventSpace'],
     },
     Amount: {
         type: Number,
@@ -40,10 +41,10 @@ let premiumsSchema = new mongoose.Schema({
     }
 });
 
-let dressingsSchema = new mongoose.Schema({
+let gamingSchema = new mongoose.Schema({
     Name: {
         type: String,
-        enum: ['Peppercorn Tahina Dressing', 'Cranberry Maple Vinaigrette', 'Green Goddess Ranch Dressing', 'Balsamic Vinaigrette', 'Balsamic Vinegar', 'Caesar Dressing', 'Extra Virgin Olive Oil', 'Lime Cilantro Jalapeno Dressing Vinaigrette', 'Miso Sesame Ginger Dressing', 'Pesto Vinaigrette', 'Spicy Cashew Dressing', 'Hot Sauce', 'Fresh Lime Squeeze', 'Fresh Lemon Squeeze', 'Red Chili'],
+        enum: ['snooker', 'tableTennis', 'playStation'],
     },
     Amount: {
         type: Number,
@@ -51,6 +52,7 @@ let dressingsSchema = new mongoose.Schema({
         required: "Number is required"
     }
 });
+
 
 let commentsSchema = new mongoose.Schema({
     Content: {
@@ -70,15 +72,15 @@ let commentsSchema = new mongoose.Schema({
 let ComboSchema = new mongoose.Schema({
         Name: {
             type: String,
-            required: "Bowls is required"
+            required: "Name is required"
         },
         Bowl: {
-            type: [[basesSchema], [toppingsSchema], [premiumsSchema], [dressingsSchema]],
-            required: "Bowls is required"
+            type: [[amenitiesSchema], [fitnessSchema], [roomsSchema], [gamingSchema]],
+            required: "Plan is required"
         },
-        Smoothie: {
+        Cafeteria: {
             type: String,
-            required: "Smoothie is required"
+            required: "Space is required"
         },
         Owner: {
             type: String,
