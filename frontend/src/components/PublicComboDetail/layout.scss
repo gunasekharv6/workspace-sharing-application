@@ -1,0 +1,86 @@
+.ul-outer {
+  list-style: none;
+  padding-top: 50px;
+  background:rgba(0,0,0,0.5);
+  height: 100%;
+  width: 100%;
+  img{
+    height: 18px;
+    weight: 18px;
+  }
+  .comments{
+    list-style: none;
+    font-family: 'Malayalam MN';
+    color: ghostwhite;
+    font-size: 20px;
+    line-height: 1.0;
+    width: 91%;
+    .time{
+      width: 100%;
+      font-size: 10px;
+      font-family: "Bodoni 72";
+      font-weight: lighter;
+      color: lightgray;
+      text-align: right;
+    }
+  }
+}
+
+
+.left-container{
+  font-family: 'Malayalam MN';
+  color: antiquewhite;
+  background:rgba(0,0,0,0.5);
+  padding-top: 10px;
+  list-style: none;
+  line-height: 1.6;
+  width:100%;
+  li{
+    >span{
+      font-family: 'Marck Script', cursive;
+      color: #fff;
+      font-size: 25px;
+    }
+  }
+  .ingredients{
+    list-style: none;
+  }
+  img{
+    height: 18px;
+    width: 18px;
+  }
+}
+
+h1{
+  font-family: Frutiger;
+  color: white;
+  font-size: 50px;
+}
+
+textarea{
+  margin-top: 20px;
+  height: 100px;
+  display:inline-block;
+  width:100%;
+  border-color: lightgrey;
+  border-radius: 10px;
+}
+
+
+.leave-comment{
+  padding-top: 20px;
+  padding-right: 25px;
+  textarea{
+    opacity: 0.5;
+  }
+  button{
+    float: right;
+    padding: 10px 24px;
+    background: rgba(0,0,0,0.5);
+    color: whitesmoke;
+    border: none;
+    border-radius: 10px;
+  }
+}
+
+
