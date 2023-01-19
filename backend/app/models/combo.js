@@ -72,15 +72,15 @@ let commentsSchema = new mongoose.Schema({
 let ComboSchema = new mongoose.Schema({
         Name: {
             type: String,
-            required: "Name is required"
+            // required: "Name is required"
         },
         Bowl: {
             type: [[amenitiesSchema], [fitnessSchema], [roomsSchema], [gamingSchema]],
-            required: "Plan is required"
+            // required: "Plan is required"
         },
         Cafeteria: {
             type: String,
-            required: "Space is required"
+            // required: "Space is required"
         },
         Owner: {
             type: String,
