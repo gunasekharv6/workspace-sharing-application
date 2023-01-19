@@ -6,9 +6,10 @@ import NewPlan from './pages/NewPlan';
 import ViewPlan from './pages/ViewPlan';
 import Register from "./pages/Register";
 import Login from "./pages/Login";
+import AboutUs from "./pages/AboutUs/AboutUs.js";
 import UserDetail from "./pages/UserDetail";
 import './App.css';
-import AboutUs from "./pages/AboutUs/AboutUs";
+
 import Locations from "./pages/Locations/MapContainer";
 
 
