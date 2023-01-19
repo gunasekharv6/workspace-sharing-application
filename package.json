@@ -1,6 +1,10 @@
 {
   "name": "projectfinal",
   "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
   "dependencies": {
     "bootstrap": "^5.1.3",
     "node-sass": "^6.0.1",
