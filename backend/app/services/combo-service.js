@@ -18,9 +18,14 @@ exports.searchById=async(mail)=>{
 }
 
 exports.createCombo=async(content)=>{
-    const newCombo=new Combo(content);
-    newCombo.save();
-    return newCombo;
+    try {
+        const newCombo=new Combo(content);
+        newCombo.save();
+        return newCombo;
+    } catch (error) {
+        console.error("Combo not created");
+        return "Combo not created";
+    }
 }
 
 exports.updateCombo=async(id,body)=>{

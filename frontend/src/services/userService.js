@@ -1,6 +1,7 @@
 import axios from 'axios';
-// const apiUrl = "http://localhost:3003/users/"
-const apiUrl = "http://localhost:3003/users"
+
+// const apiUrl = "http://localhost:3003/users"
+const apiUrl = "https://guna-workspace-api.onrender.com/users"
 
 //get user from database
 export function getUser(_mail) {

@@ -1,5 +1,6 @@
 import axios from 'axios';
-const apiUrl="http://localhost:3003/combos/"
+// const apiUrl="http://localhost:3003/combos/"
+const apiUrl = "https://guna-workspace-api.onrender.com/combos/"
 
 //get all Combo from database
 export function getAllCombo(){
